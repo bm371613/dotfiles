@@ -1,0 +1,9 @@
+[core]
+	excludesfile = ~/.gitignore
+	editor = vim
+	pager = less -r
+[user]
+	email = bm371613@gmail.com
+	name = Bartosz Marcinkowski
+[push]
+	default = simple
