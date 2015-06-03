@@ -1,0 +1,53 @@
+#! /usr/bin/python3
+import os
+import shutil
+
+
+here = os.path.dirname(os.path.abspath(__file__))
+
+
+def sync_file(repo_path):
+    rel_path = os.path.relpath(repo_path, start=here)
+    assert rel_path.startswith('_')
+    deploy_path = os.path.join(os.path.expanduser('~'), "." + rel_path[1:])
+
+    repo_ts = os.path.getmtime(repo_path)
+    deploy_ts = (
+        os.path.getmtime(deploy_path)
+        if os.path.exists(deploy_path)
+        else 0
+    )
+    if repo_ts > deploy_ts:
+        print("REPO ➜ DEPLOY: ", rel_path[1:])
+        deploy_dir = os.path.dirname(deploy_path)
+        if not os.path.exists(deploy_dir):
+            os.makedirs(deploy_dir)
+        shutil.copy2(repo_path, deploy_path)
+    elif deploy_ts > repo_ts:
+        print("DEPLOY ➜ REPO: ", rel_path[1:])
+        shutil.copy2(deploy_path, repo_path)
+
+
+def discover_repo_paths():
+
+    def explore_dir(dir_path):
+        for name in os.listdir(dir_path):
+            path = os.path.join(dir_path, name)
+            if os.path.isfile(path):
+                yield path
+            elif os.path.isdir(path):
+                yield from explore_dir(path)
+
+    for name in os.listdir(here):
+        if name.startswith('_'):
+            path = os.path.join(here, name)
+            if os.path.isfile(path):
+                yield path
+            elif os.path.isdir(path):
+                yield from explore_dir(path)
+
+
+if __name__ == '__main__':
+    for repo_path in discover_repo_paths():
+        sync_file(repo_path)
+
