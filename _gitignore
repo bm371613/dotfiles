@@ -1,5 +1,6 @@
 .idea
 venv
+.gitreview
 __pycache__
 *.iml
 *.egg-info
