@@ -4,12 +4,13 @@ import shutil
 
 
 here = os.path.dirname(os.path.abspath(__file__))
+home = os.path.expanduser('~')
 
 
 def sync_file(repo_path):
     rel_path = os.path.relpath(repo_path, start=here)
     assert rel_path.startswith('_')
-    deploy_path = os.path.join(os.path.expanduser('~'), "." + rel_path[1:])
+    deploy_path = os.path.join(home, "." + rel_path[1:])
 
     repo_ts = os.path.getmtime(repo_path)
     deploy_ts = (
@@ -47,7 +48,26 @@ def discover_repo_paths():
                 yield from explore_dir(path)
 
 
-if __name__ == '__main__':
+def get_ignored_patterns():
+    result = []
+    path = os.path.join(home, '.dotfilesignore')
+    if not os.path.exists(path) or not os.path.isfile(path):
+        return []
+    with open(path, 'r') as f:
+        return [l.strip() for l in f]
+
+
+def match_pattern(pattern, repo_path):
+    return os.path.join(here, "_" + pattern) == repo_path
+
+
+def main():
+    ignored_patterns = get_ignored_patterns()
     for repo_path in discover_repo_paths():
-        sync_file(repo_path)
+        if not any(match_pattern(p, repo_path) for p in ignored_patterns):
+            sync_file(repo_path)
+
+
+if __name__ == '__main__':
+    main()
 
