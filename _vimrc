@@ -16,6 +16,7 @@ filetype indent on
 " basic goodies
 syntax on
 set number
+set laststatus=2
 colorscheme desert
 
 " current line
