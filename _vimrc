@@ -1,7 +1,7 @@
-" make backspace work
-set backspace=2
+imap ;; <Esc>
 
-" the annoying files
+set backspace=2
+set hidden
 set nobackup
 set noswapfile
 
@@ -33,14 +33,10 @@ command Wq wq
 command W w
 command Q q
 
-" tab navigation
-nnoremap <silent> <C-J> :tabprevious<CR>
-nnoremap <silent> <C-K> :tabnext<CR>
-
 " splitting
 set splitbelow
 set splitright
 
-nnoremap <silent> <C-H> <C-W><C-H>
-nnoremap <silent> <C-L> <C-W><C-L>
+" toggle search highlight
+noremap <F4> :set hlsearch! hlsearch?<CR>
 
