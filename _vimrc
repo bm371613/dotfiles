@@ -13,6 +13,8 @@ set expandtab
 set smartindent
 filetype indent on
 
+nmap <silent> <leader>p :set paste<CR>"*p:set nopaste<CR>
+
 " basic goodies
 syntax on
 set number
