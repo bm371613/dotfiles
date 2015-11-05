@@ -13,8 +13,6 @@ set expandtab
 set smartindent
 filetype indent on
 
-nmap <silent> <leader>p :set paste<CR>"*p:set nopaste<CR>
-
 " basic goodies
 syntax on
 set number
@@ -38,6 +36,9 @@ command Q q
 " splitting
 set splitbelow
 set splitright
+
+" toggle paste
+set pastetoggle=<F3>
 
 " toggle search highlight
 noremap <F4> :set hlsearch! hlsearch?<CR>
