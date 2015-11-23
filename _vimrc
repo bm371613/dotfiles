@@ -1,4 +1,4 @@
-imap ;; <Esc>
+inoremap jj <ESC>
 
 set backspace=2
 set hidden
