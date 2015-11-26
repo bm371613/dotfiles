@@ -58,7 +58,11 @@ def get_ignored_patterns():
 
 
 def match_pattern(pattern, repo_path):
-    return os.path.join(here, "_" + pattern) == repo_path
+    pattern_path = os.path.join(here, "_" + pattern)
+    if pattern[-1] == "/":
+        return repo_path.startswith(pattern_path)
+    else:
+        return pattern_path == repo_path
 
 
 def main():
