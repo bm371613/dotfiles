@@ -1,28 +1,29 @@
 [Configuration]
-BackgroundMode=TERMINAL_BACKGROUND_TRANSPARENT
 BackgroundDarkness=1,000000
+BackgroundMode=TERMINAL_BACKGROUND_TRANSPARENT
 ColorBackground=#111111111111
 ColorCursor=#888888888888
 ColorForeground=#f8f8f8
 ColorPalette=#272822;#f92672;#a6e22e;#f4bf75;#66d9ef;#ae81ff;#a1efe4;#f8f8f2;#75715e;#f92672;#a6e22e;#f4bf75;#66d9ef;#ae81ff;#a1efe4;#f9f8f5
+FontName=Monospace 11
 MiscAlwaysShowTabs=FALSE
 MiscBell=FALSE
 MiscBordersDefault=TRUE
+MiscConfirmClose=TRUE
 MiscCursorBlinks=FALSE
 MiscCursorShape=TERMINAL_CURSOR_SHAPE_BLOCK
+MiscCycleTabs=TRUE
 MiscDefaultGeometry=80x24
+MiscHighlightUrls=TRUE
 MiscInheritGeometry=FALSE
 MiscMenubarDefault=FALSE
 MiscMouseAutohide=FALSE
-MiscToolbarDefault=FALSE
-MiscConfirmClose=TRUE
-MiscCycleTabs=TRUE
+MiscScrollAlternateScreen=TRUE
 MiscTabCloseButtons=TRUE
 MiscTabCloseMiddleClick=TRUE
 MiscTabPosition=GTK_POS_TOP
-MiscHighlightUrls=TRUE
-MiscScrollAlternateScreen=TRUE
+MiscToolbarDefault=FALSE
 ScrollingBar=TERMINAL_SCROLLBAR_NONE
+ScrollingLines=999999
+ScrollingOnOutput=FALSE
 TitleMode=TERMINAL_TITLE_REPLACE
-FontName=Monospace 11
-

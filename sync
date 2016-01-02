@@ -19,13 +19,13 @@ def sync_file(repo_path):
         else 0
     )
     if repo_ts > deploy_ts:
-        print("REPO ➜ DEPLOY: ", rel_path[1:])
+        print("REPO -> DEPLOY: ", rel_path[1:])
         deploy_dir = os.path.dirname(deploy_path)
         if not os.path.exists(deploy_dir):
             os.makedirs(deploy_dir)
         shutil.copy2(repo_path, deploy_path)
     elif deploy_ts > repo_ts:
-        print("DEPLOY ➜ REPO: ", rel_path[1:])
+        print("DEPLOY -> REPO: ", rel_path[1:])
         shutil.copy2(deploy_path, repo_path)
 
 
