@@ -1,7 +1,12 @@
+" source vimrc on write
+autocmd! bufwritepost .vimrc source %
+
+" basics
 set shell=/bin/sh
 source ~/.vimrc_vundle
 
 filetype plugin on
+syntax on
 
 let mapleader=","
 inoremap jj <ESC>
@@ -10,6 +15,9 @@ set backspace=2
 set hidden
 set nobackup
 set noswapfile
+set number
+set laststatus=2
+colorscheme desert
 
 " tabs and indenting
 set tabstop=4
@@ -19,12 +27,6 @@ set expandtab
 set smartindent
 filetype indent on
 
-" basic goodies
-syntax on
-set number
-set laststatus=2
-colorscheme desert
-
 " current line
 set cursorline
 hi CursorLine cterm=NONE
@@ -32,12 +34,6 @@ hi CursorLine cterm=NONE
 " ruler
 set colorcolumn=80
 set ruler
-
-" accept common typos
-command WQ wq
-command Wq wq
-command W w
-command Q q
 
 " splitting
 set splitbelow
