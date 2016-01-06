@@ -1,3 +1,6 @@
+set shell=/bin/sh
+source ~/.vimrc_vundle
+
 inoremap jj <ESC>
 
 set backspace=2
@@ -42,4 +45,7 @@ set pastetoggle=<F3>
 
 " toggle search highlight
 noremap <F4> :set hlsearch! hlsearch?<CR>
+
+" nerdtree
+map <F2> :NERDTreeToggle<CR>
 
