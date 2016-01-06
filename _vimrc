@@ -40,6 +40,10 @@ set ruler
 set splitbelow
 set splitright
 
+" keep selection when changing indentation
+vnoremap < <gv
+vnoremap > >gv
+
 " toggle paste
 set pastetoggle=<F3>
 
