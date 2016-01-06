@@ -52,3 +52,6 @@ noremap <F4> :set hlsearch! hlsearch?<CR>
 " nerdtree
 map <F2> :NERDTreeToggle<CR>
 
+" find file with CtrlP.Vim
+nnoremap <silent> <leader>f :CtrlPCurWD<CR>
+
