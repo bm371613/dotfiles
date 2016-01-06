@@ -12,11 +12,12 @@ let mapleader=","
 inoremap jj <ESC>
 
 set backspace=2
+set clipboard=unnamedplus
 set hidden
+set laststatus=2
 set nobackup
 set noswapfile
 set number
-set laststatus=2
 colorscheme desert
 
 " tabs and indenting
