@@ -1,6 +1,9 @@
 set shell=/bin/sh
 source ~/.vimrc_vundle
 
+filetype plugin on
+
+let mapleader=","
 inoremap jj <ESC>
 
 set backspace=2
