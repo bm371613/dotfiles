@@ -7,6 +7,7 @@ source ~/.vimrc_vundle
 
 filetype plugin on
 syntax on
+colorscheme molokai
 
 let mapleader=","
 inoremap jj <ESC>
@@ -18,7 +19,6 @@ set laststatus=2
 set nobackup
 set noswapfile
 set number
-colorscheme desert
 
 " tabs and indenting
 set tabstop=4
@@ -28,12 +28,9 @@ set expandtab
 set smartindent
 filetype indent on
 
-" current line
-set cursorline
-hi CursorLine cterm=NONE
-
-" ruler
+" cursorline and ruler
 set colorcolumn=80
+set cursorline
 set ruler
 
 " splitting
