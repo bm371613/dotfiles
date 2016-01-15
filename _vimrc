@@ -16,6 +16,7 @@ set backspace=2
 set clipboard=unnamedplus
 set hidden
 set laststatus=2
+set linebreak
 set nobackup
 set noswapfile
 set number
