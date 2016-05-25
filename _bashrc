@@ -8,3 +8,5 @@ xterm*)
     ;; 
 esac
 
+set -o vi
+
