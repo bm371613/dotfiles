@@ -10,3 +10,6 @@ esac
 
 set -o vi
 
+keychain -q $HOME/.ssh/id_rsa
+source $HOME/.keychain/$HOSTNAME-sh
+

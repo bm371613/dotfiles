@@ -11,3 +11,6 @@ switch $TERM
         set TERM xterm-256color
 end
 
+keychain -q $HOME/.ssh/id_rsa
+source $HOME/.keychain/(hostname)-fish
+
