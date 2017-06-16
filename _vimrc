@@ -13,12 +13,14 @@ let mapleader=","
 inoremap jj <ESC>
 
 set backspace=2
+set clipboard=unnamed
 set clipboard=unnamedplus
 set hidden
 set laststatus=2
 set linebreak
 set nobackup
 set noswapfile
+set relativenumber
 set number
 
 " tabs and indenting
@@ -53,4 +55,3 @@ map <F2> :NERDTreeToggle<CR>
 
 " find file with CtrlP.Vim
 nnoremap <silent> <leader>f :CtrlPCurWD<CR>
-
