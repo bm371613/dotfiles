@@ -59,6 +59,17 @@ _k_friendly_name=KDE Daemon
 {c7944be7-731a-485d-87ff-2c28425d708d}=Print,none,Wywołaj narzędzie zrzutów ekranu
 {d03619b6-9b3c-48cc-9d9c-a2aadb485550}=,none,Znajdź
 
+[klipper]
+_k_friendly_name=Klipper
+clear-history=none,none,Wyczyść historię schowka
+clipboard_action=,Ctrl+Alt+X,Włącz działania schowka
+cycleNextAction=none,none,Następny element historii
+cyclePrevAction=none,none,Poprzedni element historii
+edit_clipboard=none,none,Zmień zawartość...
+repeat_action=,Ctrl+Alt+R,Ręcznie wywołaj działanie na zawartości schowka
+show-barcode=none,none,Pokaż kod kreskowy...
+show-on-mouse-pos=none,none,Otwórz Klippera pod wskaźnikiem myszy
+
 [kmix]
 _k_friendly_name=Głośność dźwięku
 decrease_microphone_volume=Microphone Volume Down,Microphone Volume Down,Zmniejsz głośność mikrofonu
@@ -67,6 +78,11 @@ increase_microphone_volume=Microphone Volume Up,Microphone Volume Up,Zwiększ g�
 increase_volume=Volume Up,Volume Up,Zwiększ głośność
 mic_mute=Microphone Mute,Microphone Mute,Wycisz mikrofon
 mute=Volume Mute,Volume Mute,Wycisz
+
+[konversation]
+_k_friendly_name=Konversation
+next_active_tab=none,none,Następna aktywna karta
+toggle_mainwindow_visibility=none,none,Pokaż/Ukryj Konversation
 
 [krunner]
 _k_friendly_name=Wykonaj polecenie
@@ -253,6 +269,7 @@ activate task manager entry 9=Meta+9,Meta+9,Aktywuj wpis 9 na pasku zadań
 activate widget 4=none,none,Włącz element interfejsu: Zarządzanie zadaniami
 activate widget 44=Alt+F1,none,Włącz element interfejsu: Aktywator programów
 activate widget 66=,none,Włącz element interfejsu: Aktywator programów
+activate widget 92=none,none,Włącz element interfejsu: Zegar analogowy
 clear-history=none,none,Wyczyść historię schowka
 clipboard_action=Ctrl+Alt+X,Ctrl+Alt+X,Włącz działania schowka
 cycleNextAction=none,none,Następny element historii
