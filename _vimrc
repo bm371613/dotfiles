@@ -1,10 +1,6 @@
 " source vimrc on write
 autocmd! bufwritepost .vimrc source %
 
-" source local configuration securely
-set exrc
-set secure
-
 " basics
 set shell=/bin/sh
 source ~/.vimrc_vundle

@@ -51,12 +51,11 @@ display=Display,Display\tMeta+P,Przełącz ekran
 
 [khotkeys]
 _k_friendly_name=KDE Daemon
-{03034fa7-fb06-4644-9a9b-60a60965174d}=Meta+Shift+Print,none,Wykonaj zrzut prostokątnego obszaru
-{0ef3aa4f-0b2b-4668-9191-58fc4e9482c3}=Meta+T,none,Uruchom Konsolę
-{4d9d9978-7d1f-4922-924f-102002cff906}=Meta+Print,none,Wykonaj zrzut obecnie aktywnego okna
-{73dc83b1-829f-4a5f-9b0c-dde45332241d}=Meta+S,none,screenshot
-{9ce95ff7-94ec-4216-a93f-3ced5d7fac2f}=Shift+Print,none,Wykonaj zrzut całego ekranu
-{c7944be7-731a-485d-87ff-2c28425d708d}=Print,none,Wywołaj narzędzie zrzutów ekranu
+{01cb56b5-4633-4a81-8b11-ebec2445f1fb}=,none,Wywołaj narzędzie zrzutów ekranu
+{1a797ee4-d59f-438d-a94e-1bbca0fb8b98}=,none,Wykonaj zrzut całego ekranu
+{2b4eafed-5160-433e-bd7d-b97502e6559a}=Meta+T,none,Uruchom Konsolę
+{38b2269f-1fe3-4a89-b634-76b712f479bc}=,none,Wykonaj zrzut obecnie aktywnego okna
+{8b74c2cb-36d5-4647-bab2-732338d5eec4}=,none,Wykonaj zrzut prostokątnego obszaru
 {d03619b6-9b3c-48cc-9d9c-a2aadb485550}=,none,Znajdź
 
 [klipper]
@@ -266,6 +265,7 @@ activate task manager entry 6=Meta+6,Meta+6,Aktywuj wpis 6 na pasku zadań
 activate task manager entry 7=Meta+7,Meta+7,Aktywuj wpis 7 na pasku zadań
 activate task manager entry 8=Meta+8,Meta+8,Aktywuj wpis 8 na pasku zadań
 activate task manager entry 9=Meta+9,Meta+9,Aktywuj wpis 9 na pasku zadań
+activate widget 2=,none,Włącz element interfejsu: Aktywator programów
 activate widget 4=none,none,Włącz element interfejsu: Zarządzanie zadaniami
 activate widget 44=Alt+F1,none,Włącz element interfejsu: Aktywator programów
 activate widget 66=,none,Włącz element interfejsu: Aktywator programów
@@ -294,3 +294,7 @@ edit_clipboard=none,none,Zmień zawartość...
 repeat_action=,Ctrl+Alt+R,Ręcznie wywołaj działanie na zawartości schowka
 show-barcode=none,none,Pokaż kod kreskowy...
 show-on-mouse-pos=none,none,Otwórz Klippera pod wskaźnikiem myszy
+
+[yakuake]
+_k_friendly_name=Yakuake
+toggle-window-state=F12,F12,Otwórz/ukryj Yakuake

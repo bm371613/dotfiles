@@ -1,5 +1,7 @@
 set --erase fish_greeting
 
+set -gx PATH $HOME/bin $PATH
+
 set -g fish_color_autosuggestion '666666'
 set -g fish_color_command 'ffffff'
 set -g fish_color_cwd '5fafd7'
