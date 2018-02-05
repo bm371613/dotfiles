@@ -1,0 +1,3 @@
+Host *.vpn
+    ForwardAgent yes
+
