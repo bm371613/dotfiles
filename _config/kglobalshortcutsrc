@@ -1,3 +1,6 @@
+[$Version]
+update_info=powerdevil_move_shortcuts.upd:powerdevil_move_shortcuts
+
 [KDE Keyboard Layout Switcher]
 Switch to Next Keyboard Layout=Ctrl+Alt+K,none,Przełącz do następnego układu klawiatury
 _k_friendly_name=KDE Daemon
@@ -37,25 +40,18 @@ Toggle Touchpad=Touchpad Toggle,Touchpad Toggle,Przełącz gładzik
 _k_friendly_name=KDE Daemon
 
 [kded5]
-Decrease Keyboard Brightness=Keyboard Brightness Down,Keyboard Brightness Down,Zmniejsz jasność klawiatury
-Decrease Screen Brightness=Monitor Brightness Down,Monitor Brightness Down,Zmniejsz jasność ekranu
-Hibernate=Hibernate,Hibernate,Hibernuj
-Increase Keyboard Brightness=Keyboard Brightness Up,Keyboard Brightness Up,Zwiększ jasność klawiatury
-Increase Screen Brightness=Monitor Brightness Up,Monitor Brightness Up,Zwiększ jasność ekranu
-PowerOff=Power Off,Power Off,Wyłącz
 Show System Activity=Ctrl+Esc,Ctrl+Esc,Pokaż aktywność systemu
-Sleep=Sleep,Sleep,Uśpij
-Toggle Keyboard Backlight=Keyboard Light On/Off,Keyboard Light On/Off,Przełącz podświetlenie klawiatury
-_k_friendly_name=Zarządzanie energią
+_k_friendly_name=KDE Daemon
 display=Display,Display\tMeta+P,Przełącz ekran
 
 [khotkeys]
 _k_friendly_name=KDE Daemon
-{01cb56b5-4633-4a81-8b11-ebec2445f1fb}=,none,Wywołaj narzędzie zrzutów ekranu
+{01cb56b5-4633-4a81-8b11-ebec2445f1fb}=Meta+S,none,Wywołaj narzędzie zrzutów ekranu
 {1a797ee4-d59f-438d-a94e-1bbca0fb8b98}=,none,Wykonaj zrzut całego ekranu
 {2b4eafed-5160-433e-bd7d-b97502e6559a}=Meta+T,none,Uruchom Konsolę
 {38b2269f-1fe3-4a89-b634-76b712f479bc}=,none,Wykonaj zrzut obecnie aktywnego okna
 {8b74c2cb-36d5-4647-bab2-732338d5eec4}=,none,Wykonaj zrzut prostokątnego obszaru
+{b4b3c982-f16a-4cb5-86e1-6673164f1f0e}=Ctrl+Alt+T,none,Launch Konsole
 {d03619b6-9b3c-48cc-9d9c-a2aadb485550}=,none,Znajdź
 
 [klipper]
@@ -109,10 +105,10 @@ Invert Screen Colors=none,none,Odwróć kolory ekranu
 Kill Window=Ctrl+Alt+Esc,Ctrl+Alt+Esc,Zniszcz okno
 MoveMouseToCenter=Meta+F6,Meta+F6,Przenieś mysz do środka
 MoveMouseToFocus=Meta+F5,Meta+F5,Przenieś mysz do uaktywnienia
-MoveZoomDown=Meta+Down,Meta+Down,Przenieś powiększony obszar w dół
-MoveZoomLeft=Meta+Left,Meta+Left,Przenieś powiększony obszar w lewo
-MoveZoomRight=Meta+Right,Meta+Right,Przenieś powiększony obszar w prawo
-MoveZoomUp=Meta+Up,Meta+Up,Przenieś powiększony obszar w górę
+MoveZoomDown=Meta+Down,none,Przenieś powiększony obszar w dół
+MoveZoomLeft=Meta+Left,none,Przenieś powiększony obszar w lewo
+MoveZoomRight=Meta+Right,none,Przenieś powiększony obszar w prawo
+MoveZoomUp=Meta+Up,none,Przenieś powiększony obszar w górę
 Remove Window From Group=none,none,Usuń okno z grupy
 Setup Window Shortcut=none,none,Ustawienia skrótu okna
 Show Desktop=none,none,Pokaż pulpit
@@ -180,10 +176,10 @@ Window Fullscreen=Meta+F,none,Uczyń oknem pełnoekranowym
 Window Grow Horizontal=none,none,Rozwiń okno w poziomie
 Window Grow Vertical=none,none,Rozwiń okno w pionie
 Window Lower=none,none,Odwołaj okno
-Window Maximize=\tMeta+M,none,Maksymalizuj okno
+Window Maximize=\tMeta+M,Meta+PgUp,Maksymalizuj okno
 Window Maximize Horizontal=none,none,Maksymalizuj okno w poziomie
 Window Maximize Vertical=none,none,Maksymalizuj okno w pionie
-Window Minimize=none,none,Minimalizuj okno
+Window Minimize=none,Meta+PgDown,Minimalizuj okno
 Window Move=none,none,Przenieś okno
 Window No Border=none,none,Ukryj obramowanie okna
 Window On All Desktops=none,none,Na wszystkich pulpitach
@@ -196,12 +192,12 @@ Window Pack Down=none,none,Wyrównaj okno do dołu
 Window Pack Left=none,none,Wyrównaj okno do lewej
 Window Pack Right=none,none,Wyrównaj okno do prawej
 Window Pack Up=none,none,Wyrównaj okno do góry
-Window Quick Tile Bottom=none,none,Kafelka z okna na dolnej krawędzi
+Window Quick Tile Bottom=none,Meta+Down,Kafelka z okna na dolnej krawędzi
 Window Quick Tile Bottom Left=none,none,Kafelka z okna w dolnym lewym narożniku
 Window Quick Tile Bottom Right=none,none,Kafelka z okna w dolnym prawym narożniku
-Window Quick Tile Left=\tMeta+[,none,Kafelka z okna na lewej krawędzi
-Window Quick Tile Right=\tMeta+],none,Kafelka z okna na prawej krawędzi
-Window Quick Tile Top=none,none,Kafelka z okna na górnej krawędzi
+Window Quick Tile Left=\tMeta+[,Meta+Left,Kafelka z okna na lewej krawędzi
+Window Quick Tile Right=\tMeta+],Meta+Right,Kafelka z okna na prawej krawędzi
+Window Quick Tile Top=none,Meta+Up,Kafelka z okna na górnej krawędzi
 Window Quick Tile Top Left=none,none,Kafelka z okna w górnym lewym narożniku
 Window Quick Tile Top Right=none,none,Kafelka z okna w górnym prawym narożniku
 Window Raise=none,none,Przywołaj okno
@@ -248,10 +244,23 @@ view_zoom_out=Meta+-,Meta+-,Pomniejsz
 
 [mediacontrol]
 _k_friendly_name=Pilot multimedialny
+mediavolumedown=none,none,Zmniejsz głośność
+mediavolumeup=none,none,Zwiększ głośność
 nextmedia=Media Next,Media Next,Odtwórz następny plik
 playpausemedia=Media Play,Media Play,Odtwórz/Wstrzymaj odtwarzanie
 previousmedia=Media Previous,Media Previous,Odtwórz poprzedni plik
 stopmedia=Media Stop,Media Stop,Zatrzymaj odtwarzanie pliku
+
+[org_kde_powerdevil]
+Decrease Keyboard Brightness=Keyboard Brightness Down,Keyboard Brightness Down,Zmniejsz jasność klawiatury
+Decrease Screen Brightness=Monitor Brightness Down,Monitor Brightness Down,Zmniejsz jasność ekranu
+Hibernate=Hibernate,Hibernate,Hibernuj
+Increase Keyboard Brightness=Keyboard Brightness Up,Keyboard Brightness Up,Zwiększ jasność klawiatury
+Increase Screen Brightness=Monitor Brightness Up,Monitor Brightness Up,Zwiększ jasność ekranu
+PowerOff=Power Off,Power Off,Wyłącz
+Sleep=Sleep,Sleep,Uśpij
+Toggle Keyboard Backlight=Keyboard Light On/Off,Keyboard Light On/Off,Przełącz podświetlenie klawiatury
+_k_friendly_name=Zarządzanie energią
 
 [plasmashell]
 _k_friendly_name=Plazma

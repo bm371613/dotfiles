@@ -1,3 +1,5 @@
 Host *.vpn
     ForwardAgent yes
+    SendEnv AWS_ACCESS_KEY_ID
+    SendEnv AWS_SECRET_ACCESS_KEY
 
