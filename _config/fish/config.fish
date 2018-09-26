@@ -1,5 +1,11 @@
 set --erase fish_greeting
 
+for line in (cat ~/.env)
+    export $line
+end
+
+boto
+
 set -gx PATH $HOME/bin $PATH
 set -gx PATH $HOME/.local/bin $PATH
 
