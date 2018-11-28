@@ -1,0 +1,11 @@
+keycode 133 = Mode_switch
+keycode 134 = Mode_switch
+keysym h = h H Left
+keysym l = l L Right
+keysym k = k K Up
+keysym j = j J Down
+keysym w = w W Prior
+keysym s = s S Next
+keysym a = a A Home
+keysym d = d D End
+keysym BackSpace = BackSpace BackSpace Delete
