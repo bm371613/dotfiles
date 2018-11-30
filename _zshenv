@@ -1,3 +1,4 @@
 source $HOME/.env
 export EDITOR='vim'
 export PATH=$HOME/bin:$HOME/.local/bin:$HOME/.cargo/bin:$PATH
+export TIMEFMT=$'\nreal\t%E\nuser\t%U\nsys\t%S'
