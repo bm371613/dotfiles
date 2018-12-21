@@ -1,7 +1,12 @@
 [$Version]
 update_info=powerdevil_move_shortcuts.upd:powerdevil_move_shortcuts
 
+[ActivityManager]
+_k_friendly_name=Zarządzanie aktywnościami
+switch-to-activity-57be845c-24f7-494e-a8f9-9c9590e953e4=none,none,Przełącz do aktywności "Domyślne"
+
 [KDE Keyboard Layout Switcher]
+Switch keyboard layout to Polski=none,none,Przełącz układ klawiatury na Polski
 Switch to Next Keyboard Layout=Ctrl+Alt+K,none,Przełącz do następnego układu klawiatury
 _k_friendly_name=KDE Daemon
 
@@ -285,8 +290,8 @@ cycleNextAction=none,none,Następny element historii
 cyclePrevAction=none,none,Poprzedni element historii
 edit_clipboard=none,none,Zmień zawartość...
 manage activities=,Meta+Q,Aktywności...
-next activity=Meta+Tab,none,Przełączaj między aktywnościami
-previous activity=Meta+Shift+Tab,none,Przełączaj między aktywnościami (odwrotnie)
+next activity=none,none,Przełączaj między aktywnościami
+previous activity=none,none,Przełączaj między aktywnościami (odwrotnie)
 repeat_action=Ctrl+Alt+R,Ctrl+Alt+R,Ręcznie wywołaj działanie na zawartości schowka
 show dashboard=Ctrl+F12,Ctrl+F12,Pokaż pulpit
 show-barcode=none,none,Pokaż kod kreskowy...
