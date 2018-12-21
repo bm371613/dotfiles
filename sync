@@ -7,7 +7,7 @@ here = os.path.dirname(os.path.abspath(__file__))
 home = os.path.expanduser('~')
 
 
-def sync_file(repo_path):
+def sync_file(repo_path, dry_run):
     rel_path = os.path.relpath(repo_path, start=here)
     assert rel_path.startswith('_')
     deploy_path = os.path.join(home, "." + rel_path[1:])
@@ -23,10 +23,12 @@ def sync_file(repo_path):
         deploy_dir = os.path.dirname(deploy_path)
         if not os.path.exists(deploy_dir):
             os.makedirs(deploy_dir)
-        shutil.copy2(repo_path, deploy_path)
+        if not dry_run:
+            shutil.copy2(repo_path, deploy_path)
     elif deploy_ts > repo_ts:
         print("DEPLOY -> REPO: ", rel_path[1:])
-        shutil.copy2(deploy_path, repo_path)
+        if not dry_run:
+            shutil.copy2(deploy_path, repo_path)
 
 
 def discover_repo_paths():
@@ -66,10 +68,13 @@ def match_pattern(pattern, repo_path):
 
 
 def main():
+    dry_run = not input("Dry run? ").lower() in ('n', 'no')
+    if dry_run:
+        print("Will do a dry run!")
     ignored_patterns = get_ignored_patterns()
     for repo_path in discover_repo_paths():
         if not any(match_pattern(p, repo_path) for p in ignored_patterns):
-            sync_file(repo_path)
+            sync_file(repo_path, dry_run)
 
 
 if __name__ == '__main__':
