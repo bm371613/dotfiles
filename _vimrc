@@ -9,12 +9,10 @@ filetype plugin on
 syntax on
 colorscheme molokai
 
-let mapleader=","
+let mapleader=" "
 inoremap jj <ESC>
 
 set backspace=2
-set clipboard=unnamed
-set clipboard=unnamedplus
 set hidden
 set laststatus=2
 set linebreak
@@ -22,6 +20,13 @@ set nobackup
 set noswapfile
 set relativenumber
 set number
+
+" pasting
+set clipboard=unnamed
+set clipboard=unnamedplus
+nnoremap <leader>d "_d
+vnoremap <leader>d "_d
+vnoremap <leader>p "_dP
 
 " tabs and indenting
 set tabstop=4
@@ -55,3 +60,6 @@ map <F2> :NERDTreeToggle<CR>
 
 " find file with CtrlP.Vim
 nnoremap <silent> <leader>f :CtrlPCurWD<CR>
+
+" makes git status for lines update faster
+set updatetime=100
