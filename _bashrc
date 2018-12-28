@@ -10,6 +10,7 @@ esac
 
 set -o vi
 
-keychain -q $HOME/.ssh/id_rsa
-source $HOME/.keychain/$HOSTNAME-sh
-
+if which keychain >/dev/null ; then
+    keychain -q $HOME/.ssh/id_rsa
+    source $HOME/.keychain/$(hostname)-sh
+fi

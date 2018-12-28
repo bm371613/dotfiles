@@ -1,2 +1,4 @@
-keychain -q $HOME/.ssh/id_rsa
-source $HOME/.keychain/$(hostname)-sh
+if which keychain >/dev/null ; then
+    keychain -q $HOME/.ssh/id_rsa
+    source $HOME/.keychain/$(hostname)-sh
+fi
