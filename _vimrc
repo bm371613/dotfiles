@@ -60,6 +60,8 @@ map <F2> :NERDTreeToggle<CR>
 
 " find file with CtrlP.Vim
 nnoremap <silent> <leader>f :CtrlPCurWD<CR>
+" find tag with CtrlP.Vim
+nnoremap <silent> <leader>t :CtrlPTag<CR>
 
 " makes git status for lines update faster
 set updatetime=100
