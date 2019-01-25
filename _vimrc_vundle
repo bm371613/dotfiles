@@ -35,6 +35,7 @@ Plugin 'posva/vim-vue'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
 Plugin 'davidhalter/jedi-vim'
+Plugin 'Vimjas/vim-python-pep8-indent'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
