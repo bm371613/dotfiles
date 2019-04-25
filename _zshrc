@@ -67,6 +67,8 @@ plugins=(
   virtualenv
   vi-mode
   history-substring-search
+  pyenv
+  kubectl
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -92,7 +94,7 @@ bindkey "$terminfo[khome]" beginning-of-line
 bindkey "$terminfo[kend]" end-of-line
 bindkey "$terminfo[kdch1]" delete-char
 
-# functions
+# functions and aliases
 va() {
     test -z "$VENV" && export VENV=$argv[1]
     test -z "$VENV" && export VENV=$(pipenv --venv 2>/dev/null)
@@ -100,3 +102,12 @@ va() {
     test ! -e $VENV/bin/activate && return 1
     source $VENV/bin/activate
 }
+
+
+alias wt="cd ~/workspace/private/jobtools/worktime"
+wtc() {
+    wt
+    ./cmd $@
+}
+
+alias u="cd ~/workspace/uberresearch"
