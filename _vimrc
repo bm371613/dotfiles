@@ -83,3 +83,6 @@ set updatetime=100
 
 " disable markdown folding
 let g:vim_markdown_folding_disabled = 1
+
+" use python syntax highlighting provided by a plugin
+let g:python_highlight_all = 1
