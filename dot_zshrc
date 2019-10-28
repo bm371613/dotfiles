@@ -69,6 +69,7 @@ plugins=(
   history-substring-search
   pyenv
   kubectl
+  z
 )
 
 source $ZSH/oh-my-zsh.sh

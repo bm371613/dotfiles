@@ -1,0 +1,13 @@
+#! /bin/env bash
+
+VUNDLE_PATH="$HOME/.vim/bundle/Vundle.vim"
+VUNDLE_REPO="https://github.com/VundleVim/Vundle.vim.git"
+
+if [ ! -e "$VUNDLE_PATH" ] ; then
+    echo "$VUNDLE_PATH"
+    mkdir -p "$VUNDLE_PATH"
+    git clone "$VUNDLE_REPO" "$VUNDLE_PATH"
+fi
+
+vim +PluginInstall +qall
+
