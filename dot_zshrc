@@ -111,4 +111,10 @@ wtc() {
     ./cmd $@
 }
 
+t() {
+    z $@
+    tmux new -s $(basename $(pwd) ) &>/dev/null || tmux a -t $(basename $(pwd) )
+}
+
 alias u="cd ~/workspace/uberresearch"
+alias e="vim"
