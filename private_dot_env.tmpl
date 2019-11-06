@@ -1,0 +1,6 @@
+export AWS_ACCESS_KEY_ID={{ (bitwarden "item" "AWS Access Key").login.username }}
+export AWS_SECRET_ACCESS_KEY={{ (bitwarden "item" "AWS Access Key").login.password }}
+export KOPS_STATE_STORE=s3://com.uberresearch.kops
+export UBERRESEARCH_PYPI_URL={{ (index (bitwarden "item" "Gemfury").fields 0).value }}
+export UBERRESEARCH_DEV_PYPI_URL=http://localhost:3141/bartek/uberresearch-dev/+simple
+export PIPENV_DOTENV_LOCATION=~/.pipenv.env
