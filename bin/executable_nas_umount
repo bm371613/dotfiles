@@ -1,0 +1,2 @@
+#! /bin/bash
+exec sudo umount $(awk '{print $1}' /mnt/nas/fstab | grep -v '#')

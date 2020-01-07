@@ -1,0 +1,2 @@
+#! /bin/bash
+exec sudo systemctl start openvpn-client@uber.service
