@@ -1,8 +1,12 @@
+{{- if eq .chezmoi.hostname "tuxedo" }}
 export AWS_ACCESS_KEY_ID={{ (bitwarden "item" "AWS Access Key").login.username }}
 export AWS_SECRET_ACCESS_KEY={{ (bitwarden "item" "AWS Access Key").login.password }}
-export KOPS_STATE_STORE=s3://com.uberresearch.kops
+export SNOWFLAKE_USER={{ (bitwarden "item" "snowflake").login.username }}
+export SNOWFLAKE_PASSWORD={{ (bitwarden "item" "snowflake").login.password }}
 export UBERRESEARCH_PYPI_URL={{ (index (bitwarden "item" "Gemfury").fields 0).value }}
 export UBERRESEARCH_DEV_PYPI_URL=http://localhost:3141/bartek/uberresearch-dev/+simple
 export PIP_EXTRA_INDEX_URL=$UBERRESEARCH_PYPI_URL
+{{- end }}
+export KOPS_STATE_STORE=s3://com.uberresearch.kops
 export PIP_REQUIRE_VIRTUALENV=true
 export PIPENV_DOTENV_LOCATION=~/.pipenv.env
