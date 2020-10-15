@@ -1,6 +1,6 @@
 {{- if eq .chezmoi.hostname "spice" }}
-export AWS_ACCESS_KEY_ID={{ (bitwarden "item" "AWS Access Key").login.username }}
-export AWS_SECRET_ACCESS_KEY={{ (bitwarden "item" "AWS Access Key").login.password }}
+export AWS_ACCESS_KEY_ID={{ (bitwarden "item" "62b88515-31f0-4777-bf48-aafd00c53fa1").login.username }}
+export AWS_SECRET_ACCESS_KEY={{ (bitwarden "item" "62b88515-31f0-4777-bf48-aafd00c53fa1").login.password }}
 export SNOWFLAKE_USER={{ (bitwarden "item" "snowflake").login.username }}
 export SNOWFLAKE_PASSWORD={{ (bitwarden "item" "snowflake").login.password }}
 export UBERRESEARCH_PYPI_URL={{ (index (bitwarden "item" "Gemfury").fields 0).value }}
