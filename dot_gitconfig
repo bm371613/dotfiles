@@ -3,7 +3,6 @@
 	editor = vim
 	pager = less -r
 [user]
-	email = b.marcinkowski@leomail.pl
 	name = Bartosz Marcinkowski
 [push]
 	default = simple
@@ -12,5 +11,3 @@
 	process = git-lfs filter-process
 	required = true
 	clean = git-lfs clean -- %f
-[includeIf "gitdir:~/code/uber/"]
-    path = .gitconfig-uberresearch
