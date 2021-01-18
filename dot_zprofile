@@ -1,4 +1,0 @@
-if which keychain >/dev/null ; then
-    keychain -q `ls $HOME/.ssh/id_* | grep -v pub | head -1`
-    source $HOME/.keychain/$(hostname)-sh
-fi
