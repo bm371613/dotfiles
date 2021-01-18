@@ -1,7 +1,0 @@
-Host *.vpn
-    ForwardAgent yes
-    SendEnv AWS_ACCESS_KEY_ID
-    SendEnv AWS_SECRET_ACCESS_KEY
-    SendEnv UBERRESEARCH_PYPI_URL
-    SendEnv PIP_EXTRA_INDEX_URL
-
