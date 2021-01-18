@@ -104,17 +104,4 @@ va() {
     source $VENV/bin/activate
 }
 
-
-alias wt="cd ~/workspace/private/jobtools/worktime"
-wtc() {
-    wt
-    ./cmd $@
-}
-
-t() {
-    z $@
-    tmux new -s $(basename $(pwd) ) &>/dev/null || tmux a -t $(basename $(pwd) )
-}
-
-alias u="cd ~/workspace/uberresearch"
 alias e="vim"
