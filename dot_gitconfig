@@ -4,6 +4,7 @@
 	pager = less -r
 [user]
 	name = Bartosz Marcinkowski
+	email = bartosz.marcinkowski@rtbhouse.com
 [push]
 	default = simple
 [filter "lfs"]
