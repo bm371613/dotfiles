@@ -1,4 +1,4 @@
-#! /bin/env bash
+#! /bin/bash
 
 VUNDLE_PATH="$HOME/.vim/bundle/Vundle.vim"
 VUNDLE_REPO="https://github.com/VundleVim/Vundle.vim.git"
