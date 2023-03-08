@@ -4,7 +4,7 @@
 	pager = less -r
 [user]
 	name = Bartosz Marcinkowski
-	email = bartosz.marcinkowski@rtbhouse.com
+	email = b.marcinkowski@leomail.pl
 [push]
 	default = simple
 [filter "lfs"]
@@ -12,3 +12,5 @@
 	process = git-lfs filter-process
 	required = true
 	clean = git-lfs clean -- %f
+[init]
+	defaultBranch = master
