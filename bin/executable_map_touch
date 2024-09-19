@@ -1,0 +1,23 @@
+#! /bin/bash
+set -e -o pipefail
+
+for xinput_id in `xinput list | grep Melfas | sed 's/.*\Wid=\([0-9]\+\)\W.*/\1/g'`
+do
+    dev=`xinput list-props $xinput_id | grep 'Device Node' | sed 's/.*\W"\([^"]\+\)"/\1/g'`
+    id_path=`udevadm info --name=$dev | grep 'ID_PATH=' | sed 's/.*\WID_PATH=//g'`
+    echo $xinput_id $dev $id_path
+    output=""
+    case "$id_path" in
+        "pci-0000:05:00.4-usb-0:1.4.2.2.1:1.0")
+            output=DisplayPort-2
+            ;;
+        "pci-0000:05:00.4-usb-0:1.4.1.2.1:1.0")
+            output=DisplayPort-0
+            ;;
+    esac
+    if [ ! -z "$output" ]
+    then
+        echo mapping to $output
+        xinput map-to-output $xinput_id $output
+    fi
+done
