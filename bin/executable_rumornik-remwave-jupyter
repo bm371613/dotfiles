@@ -1,0 +1,4 @@
+#!/bin/bash
+exec ssh -t -L localhost:11076:localhost:11076 rumornik \
+    /home/bmarcinkowski/.pyenv/versions/remwave/bin/python -m \
+    jupyter notebook --notebook-dir=/home/bmarcinkowski/dev/remwave --port=11076 --no-browser
