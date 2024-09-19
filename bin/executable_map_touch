@@ -9,10 +9,10 @@ do
     output=""
     case "$id_path" in
         "pci-0000:05:00.4-usb-0:1.4.2.2.1:1.0")
-            output=DisplayPort-2
+            output=`xrandr | grep '^DisplayPort-[0-9] connected 1080x1920' | cut -f 1 -d  ' '`
             ;;
         "pci-0000:05:00.4-usb-0:1.4.1.2.1:1.0")
-            output=DisplayPort-0
+            output=`xrandr | grep '^DisplayPort-[0-9] connected 1920x1080' | cut -f 1 -d  ' '`
             ;;
     esac
     if [ ! -z "$output" ]
