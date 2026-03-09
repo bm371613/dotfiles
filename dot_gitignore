@@ -7,3 +7,5 @@ __pycache__
 *.egg-info
 *.pyc
 .ipynb_checkpoints
+.env
+docs/_build
