@@ -1,0 +1,72 @@
+#!/bin/bash
+set -e -o pipefail
+
+DRY_RUN=false
+if [[ "${1:-}" == "--dry-run" ]]; then
+    DRY_RUN=true
+fi
+
+run() {
+    if $DRY_RUN; then
+        echo "$@"
+    else
+        "$@"
+    fi
+}
+
+# Capture and strip ANSI codes once; reused by dp_output_for.
+KSCREEN_OUT=$(kscreen-doctor -o 2>/dev/null | sed 's/\x1b\[[0-9;]*m//g')
+
+# Print the name of the DP output (not eDP) at the requested x position.
+# $1: "0" → find the DP connector whose Geometry x == 0
+#     "nonzero" → find the DP connector whose Geometry x != 0
+dp_output_for() {
+    echo "$KSCREEN_OUT" | awk -v want="$1" '
+        /Output:/ { out = ($3 ~ /^DP-/) ? $3 : "" }
+        /Geometry:/ && out != "" {
+            split($2, g, ","); x = g[1] + 0
+            if (want == "0"       && x == 0) { print out; exit }
+            if (want == "nonzero" && x != 0) { print out; exit }
+        }
+    '
+}
+
+kwin_get() {
+    qdbus6 org.kde.KWin "/org/kde/KWin/InputDevice/$1" \
+        org.freedesktop.DBus.Properties.Get \
+        org.kde.KWin.InputDevice "$2" 2>/dev/null || true
+}
+
+while IFS= read -r dbus_path; do
+    sys_name="${dbus_path##*/}"
+    name=$(kwin_get "$sys_name" name)
+    is_touch=$(kwin_get "$sys_name" touch)
+
+    if [[ "$name" != *"Melfas"* || "$is_touch" != "true" ]]; then
+        continue
+    fi
+
+    dev="/dev/input/$sys_name"
+    id_path=$(udevadm info --name="$dev" 2>/dev/null \
+                | grep '^E: ID_PATH=' | sed 's/^E: ID_PATH=//' || true)
+    echo "$sys_name  $dev  $id_path"
+
+    output=""
+    case "$id_path" in
+        "pci-0000:05:00.4-usb-0:1.4.2.2.1:1.0")
+            output=$(dp_output_for 0)
+            ;;
+        "pci-0000:05:00.4-usb-0:1.4.1.2.1:1.0")
+            output=$(dp_output_for nonzero)
+            ;;
+    esac
+
+    if [[ -n "$output" ]]; then
+        echo "mapping $sys_name ($name) -> $output"
+        run qdbus6 org.kde.KWin "$dbus_path" \
+            org.freedesktop.DBus.Properties.Set \
+            org.kde.KWin.InputDevice outputName "$output"
+    else
+        echo "WARNING: no DP output found for $sys_name (id_path=$id_path)" >&2
+    fi
+done < <(qdbus6 org.kde.KWin 2>/dev/null | grep '^/org/kde/KWin/InputDevice/event' || true)
