@@ -16,3 +16,4 @@ if which keychain >/dev/null ; then
 fi
 
 source ~/.env
+. "$HOME/.cargo/env"

@@ -9,3 +9,5 @@ __pycache__
 .ipynb_checkpoints
 .env
 docs/_build
+
+**/.claude/settings.local.json
