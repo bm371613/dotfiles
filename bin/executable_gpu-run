@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+LOCK_DIR="${HOME}/.gpu-run"
+mkdir -p "$LOCK_DIR"
+
+if [[ $# -lt 3 || "$1" != "--gpus" ]]; then
+    echo "Usage: $0 --gpus 0,1,2 -- command [args...]" >&2
+    exit 1
+fi
+
+GPUS="$2"
+shift 2
+[[ "$1" == "--" ]] && shift
+CMD=("$@")
+
+[[ ${#CMD[@]} -eq 0 ]] && { echo "No command given" >&2; exit 1; }
+
+# Sort GPU ids so concurrent callers always lock in the same order -> no deadlock
+IFS=',' read -ra ids <<< "$GPUS"
+IFS=$'\n' ids=($(sort -n <<<"${ids[*]}")); unset IFS
+
+fd=200
+for id in "${ids[@]}"; do
+    lockfile="$LOCK_DIR/gpu${id}.lock"
+    eval "exec $fd>\"$lockfile\""
+    echo "[gpu-run] waiting for GPU $id..." >&2
+    flock "$fd"
+    echo "[gpu-run] acquired GPU $id" >&2
+    fd=$((fd + 1))
+done
+
+export CUDA_VISIBLE_DEVICES="$GPUS"
+echo "[gpu-run] starting on GPUs $GPUS: ${CMD[*]}" >&2
+exec "${CMD[@]}"
